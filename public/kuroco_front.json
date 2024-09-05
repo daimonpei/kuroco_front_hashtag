@@ -6,7 +6,7 @@
     }
   ],
   "redirects": [],
-  "basic": [],
+  "basic": ["nonbin:bean"],
   "ip_restrictions": [],
   "error_pages": {
     "status404": "/404.html"
