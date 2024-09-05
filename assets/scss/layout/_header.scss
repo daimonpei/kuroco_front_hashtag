@@ -2,7 +2,7 @@
   position: fixed;
   width: 100%;
   top: 0;
-  background-color: var(--color-white);
+  background-color: var(--color-base);
   z-index: 100;
   &__inner {
     position: relative;
@@ -20,22 +20,23 @@
   }
   &__logo {
     flex: 0 1 auto;
-    min-width: 100px;
+    min-width: 90px;
     @include sp() {
       margin-top: var(--spacing-small);
       margin-bottom: var(--spacing-small);
     }
-    a { 
+    a {
       display: block;
       padding: var(--spacing-small) var(--spacing-small) var(--spacing-small) 0;
       transition: var(--transition-seconds);
       &:hover {
-        opacity: .8;
+        opacity: 0.8;
       }
     }
     img,
     svg {
       display: block;
+      height: 74px;
     }
   }
   &__nav {
@@ -43,7 +44,9 @@
     display: flex;
     justify-content: flex-end;
     &__toggle {
-      @include pc() { display: none; }
+      @include pc() {
+        display: none;
+      }
       width: 3em;
       height: 3em;
       padding: var(--spacing) 0;
@@ -59,9 +62,15 @@
           display: block;
           width: 100%;
           border-bottom: 2px solid var(--color-dark-gray);
-          &:first-child { top: 0; }
-          &:nth-child(2) { top: 50%; }
-          &:last-child { top: 100%; }
+          &:first-child {
+            top: 0;
+          }
+          &:nth-child(2) {
+            top: 50%;
+          }
+          &:last-child {
+            top: 100%;
+          }
           .l-header.is-open & {
             top: 50%;
             &:first-child {
@@ -70,7 +79,9 @@
             &:last-child {
               transform: rotate(135deg);
             }
-            &:nth-child(2) { display: none; }
+            &:nth-child(2) {
+              display: none;
+            }
           }
         }
       }
@@ -85,7 +96,7 @@
         top: var(--header-height-sp);
         right: -100vw;
         width: 100%;
-        height: calc( 100% - var(--header-height-sp) );
+        height: calc(100% - var(--header-height-sp));
         padding-top: var(--spacing-horizontal-sp);
         background-color: var(--color-white);
         z-index: 100;
@@ -103,10 +114,11 @@
       }
       &__item {
         a {
-          display: block;
+          // display: block;
           padding: var(--spacing);
-          font-size: .95em;
+          font-size: 0.95em;
           transition: var(--transition-seconds) color;
+          color: var(--color-white);
           @include sp() {
             padding: var(--spacing) var(--spacing-horizontal-sp);
             font-weight: bold;
@@ -138,9 +150,13 @@
         background-color: var(--color-base);
         color: var(--color-white);
         font-size: var(--font-size-x-small);
-        transition: var(--transition-seconds) border-color, var(--transition-seconds) background-color, var(--transition-seconds) color;
+        transition: var(--transition-seconds) border-color,
+          var(--transition-seconds) background-color,
+          var(--transition-seconds) color;
         @include sp() {
-          & + & { margin-left: var(--spacing); }
+          & + & {
+            margin-left: var(--spacing);
+          }
         }
         svg {
           margin-right: var(--spacing-small);
@@ -149,9 +165,45 @@
         &:hover {
           color: var(--color-base);
           background-color: var(--color-white);
-          svg path { stroke: var(--color-base); }
+          svg path {
+            stroke: var(--color-base);
+          }
         }
       }
+    }
+  }
+
+  &.home {
+    background-color: transparent;
+    &.l-header--fixed {
+      background-color: var(--color-base);
+    }
+    .l-header__inner {
+      padding: var(--spacing) var(--spacing-horizontal-pc);
+    }
+    .l-header__nav__list__item a {
+      color: var(--color-white);
+      &:hover {
+        background: var(--color-primary);
+      }
+    }
+    .l-header__nav__options__button {
+      border-color: var(--color-white);
+      color: var(--color-white);
+      svg path {
+        stroke: var(--color-white);
+      }
+      &:hover {
+        color: var(--color-base);
+        background-color: var(--color-white);
+        svg path {
+          stroke: var(--color-base);
+        }
+      }
+    }
+    & + .l-container {
+      position: relative;
+      top: -100px;
     }
   }
 }

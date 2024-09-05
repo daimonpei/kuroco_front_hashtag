@@ -1,14 +1,14 @@
 :root {
-  --color-base: #222;
-  --color-primary: #2C7BE5;
+  --color-base: #32406f; //#222;
+  --color-primary: #dcae1d; //#2C7BE5;
   --color-primary-dark: #2569c3;
-  --color-error: #E63757;
+  --color-error: #e63757;
   --color-success: #21a68d;
   --color-border: #c9ced6;
-  --color-white:  #FFFFFF;
-  --color-light-gray: #e4e9f2;
-  --color-gray: #62718C;
-  --color-dark-gray: #2e3538;
+  --color-white: #ffffff;
+  --color-light-gray: #cae4db; //#e4e9f2;
+  --color-gray: #62718c;
+  --color-dark-gray: #9eb3ac; //#2e3538;
   --font-size-base: 1.6rem;
   --font-size-h1: 2.2em;
   --font-size-h1-sp: 1.8em;
@@ -18,15 +18,23 @@
   --font-size-h3-sp: 1.3em;
   --font-size-h4: 1.2em;
   --font-size-h4-sp: 1.1em;
-  --font-size-small: .9em;
-  --font-size-x-small: .85em ;
-  --font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic Pro', Meiryo, 'MS UI Gothic', Helvetica, Arial, sans-serif;
+  --font-size-small: 0.9em;
+  --font-size-x-small: 0.85em;
+  --font-family-sansserif: 'Noto Sans JP', 'Hiragino Kaku Gothic Pro', Meiryo,
+    'MS UI Gothic', Helvetica, Arial, sans-serif;
+  --font-family-serif: 'Noto Serif JP', 'Hiragino Mincho Pro', 'MS PMincho',
+    'MS UI Gothic', serif;
+  --font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic Pro', Meiryo,
+    'MS UI Gothic', Helvetica, Arial, sans-serif;
+  --font-en-sansserif: 'Secular One', sans-serif;
+  --font-en-serif: 'Noto Serif JP', 'Hiragino Mincho Pro', 'MS PMincho',
+    'MS UI Gothic', serif;
   --font-en: 'Secular One', sans-serif;
   --border-radius: 4px;
-  --border-radius-large: calc( var(--border-radius) * 2 );
+  --border-radius-large: calc(var(--border-radius) * 2);
   --spacing: 1em;
-  --spacing-small: calc( var(--spacing) / 2 );
-  --spacing-large: calc( var(--spacing) * 2 );
+  --spacing-small: calc(var(--spacing) / 2);
+  --spacing-large: calc(var(--spacing) * 2);
   --spacing-vertical-pc: 80px;
   --spacing-horizontal-pc: 40px;
   --spacing-vertical-sp: 40px;
@@ -35,3 +43,13 @@
   --header-height-pc: 80px;
   --header-height-sp: 60px;
 }
+/*
+Bメイン #32406F
+Bサブ #9EB3AC #CAE4DB
+
+Yメイン #DCAE1D
+Yサブ #DCD51D
+
+Rメイン #990033
+Rサブ #EF87A2
+*/

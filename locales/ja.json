@@ -1,0 +1,18 @@
+{
+  "links": {
+    "home": "ホーム",
+    "news": "お知らせ",
+    "en": "English",
+    "ja": "日本語"
+  },
+  "nav": {
+    "company": "企業情報",
+    "service": "事業内容",
+    "news": "NEWS/RELEASE",
+    "contact": "お問い合わせ"
+  },
+  "hero": {
+    "lead": "#ホテル投資のすべて",
+    "text": "Real Estate Investment Management"
+  }
+}

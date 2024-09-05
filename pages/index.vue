@@ -1,29 +1,67 @@
 <template>
   <div>
-    <section class="c-hero">
-      <div class="c-hero__body">
-        <p class="c-hero__body__lead">We Enjoy Technology</p>
+    <section class="c-hero" id="c-hero" v-scroll="handleScrollHero">
+      <img src="~/assets/image/hash_b.svg" alt="hashtag" class="c-hero__hash" />
+      <video
+        src="~/assets/image/top.mp4"
+        autoplay
+        loop
+        muted
+        playsinline
+        class="c-hero__image"
+      ></video>
+      <div
+        class="c-hero__body animate__animated animate__fadeInUp"
+        id="c-hero__body"
+      >
+        <p class="c-hero__body__lead">{{ $t('hero.lead') }}</p>
         <p class="c-hero__body__text">
-          すべての開発者が自由な開発に取り組める世界の実現へ
+          {{ $t('hero.text') }}
         </p>
       </div>
-      <img src="~/assets/image/top-hero.png" alt="hero" class="c-hero__image" />
     </section>
 
     <section class="l-container--large l-container--contents">
       <div class="c-section--image-text">
-        <div class="c-section--image-text__image">
-          <img src="~/assets/image/top-service.png" alt="" />
-        </div>
-        <div class="u-display-flex-grow-1">
+        <div class="u-display-flex-grow-2">
           <p class="c-heading--sub">Our Service</p>
-          <h2 class="c-heading--lv1">5,000社の導入実績を誇るCMSの開発</h2>
-          <p class="c-text">
-            私たちは、継続的な改善やリニューアルが必要な時代に、一枚岩的なシステム開発プロセスは不向きだと考え、API中心設計で柔軟性をとことん追求したエンタープライズ・ヘッドレスCMS
-            "Kuroco"を2021年にリリースしました。<br />
-            当サービスを通して、すべての開発者が自由な開発に取り組める世界の実現に向け、尽力して参ります。
-          </p>
-          <NuxtLink to="/service/" class="c-button">事業内容を見る</NuxtLink>
+          <div class="flex-items">
+            <div
+              v-scroll="delay"
+              class="flex-item transition"
+              id="top-service1"
+            >
+              <h2 class="c-heading--lv2">豊富な経験と<br />専門知識</h2>
+              <p class="c-text">
+                ホテルファンドの組成・運用に特化したエキスパートが、確かな経験と深い専門知識で投資機会を最大化します
+              </p>
+            </div>
+            <div
+              v-scroll="delay"
+              class="flex-item transition"
+              id="top-service2"
+            >
+              <h2 class="c-heading--lv2">ワンストップ<br />トータルサービス</h2>
+              <p class="c-text">
+                ソーシングからアセットマネジメント、出口戦略まで、一貫したサポートで複雑な投資プロセスをスムーズに進めます
+              </p>
+            </div>
+            <div
+              v-scroll="delay"
+              class="flex-item transition"
+              id="top-service3"
+            >
+              <h2 class="c-heading--lv2">
+                高リターンを目指<br />した戦略的投資
+              </h2>
+              <p class="c-text">
+                コア投資から高難易度オポチュニティ投資まで、御社のニーズに応じた最適な投資戦略を提案・実行します
+              </p>
+            </div>
+          </div>
+          <NuxtLink to="/service/" class="c-button c-button__full"
+            >事業内容を見る</NuxtLink
+          >
         </div>
       </div>
     </section>
@@ -71,10 +109,12 @@
           </div>
         </div>
 
-        <UiCardList
-          v-if="ltdNews?.data?.list?.length > 0"
-          :list="ltdNews.data.list"
-        ></UiCardList>
+        <div v-scroll="delay" id="menber-cards" class="transition">
+          <UiCardList
+            v-if="ltdNews?.data?.list?.length > 0"
+            :list="ltdNews.data.list"
+          ></UiCardList>
+        </div>
 
         <div class="l-container--contents">
           <div
@@ -305,15 +345,52 @@ const config = useRuntimeConfig();
 const { data: news } = await useFetch(
   `${config.public.kurocoApiDomain}/rcms-api/1/news/list`,
   {
-    credentials: "include",
-    server: false,
+    credentials: 'include',
+    server: false
   }
 );
 const { data: ltdNews } = await useFetch(
   `${config.public.kurocoApiDomain}/rcms-api/1/ltd-news/list`,
   {
-    credentials: "include",
-    server: false,
+    credentials: 'include',
+    server: false
   }
 );
+
+const delay = (el, status) => {
+  const id = el.id;
+  // console.log(id, status.visibility, status);
+  if (status.isVisible) {
+    el.classList.add('animate__animated', 'animate__fadeInUp');
+    return true;
+  }
+  return false;
+};
+const handleScrollHero = (el, status) => {
+  const id = el.id;
+  // console.log(id, status.visibility, status);
+  const header = document.getElementById('l-header');
+  if (status.top < -670) {
+    header.classList.add('l-header--fixed');
+  } else {
+    header.classList.remove('l-header--fixed');
+  }
+};
 </script>
+
+<style lang="scss" scoped>
+.transition {
+  opacity: 0;
+}
+// .transition.animate__animated {
+//   opacity: 1;
+// }
+.flex-items {
+  display: flex;
+  justify-content: space-between;
+  .flex-item {
+    width: 30%;
+    padding: 1.6em;
+  }
+}
+</style>

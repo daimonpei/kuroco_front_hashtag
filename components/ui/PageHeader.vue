@@ -14,6 +14,15 @@
   </nav>
 
   <div v-if="subject" class="c-page-title">
+    <video
+      src="~/assets/image/top.mp4"
+      autoplay
+      loop
+      muted
+      playsinline
+      class="c-page-title__background"
+    ></video>
+
     <div class="l-container--large">
       <h1 class="c-page-title__heading">{{ subject }}</h1>
       <p class="c-heading--sub u-mt-20 u-mb-0">{{ subheading }}</p>
@@ -25,15 +34,15 @@
 const props = defineProps({
   subject: {
     type: String,
-    required: true,
+    required: true
   },
   subheading: {
     type: String,
-    required: false,
+    required: false
   },
   path: {
     type: Array,
-    default: () => [],
-  },
+    default: () => []
+  }
 });
 </script>

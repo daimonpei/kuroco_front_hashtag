@@ -58,16 +58,35 @@
 </template>
 
 <script setup>
+// const config = useRuntimeConfig();
+
+// const { isLoggedIn } = useAuth();
+
+// const route = useRoute();
+// const response = await $fetch(
+//   `${config.public.kurocoApiDomain}/rcms-api/1/ltd-news/details/${route.params.slug}`,
+//   {
+//     credentials: "include",
+//     server: false,
+//   }
+// ).catch((error) => console.info(error));
+
 const config = useRuntimeConfig();
-
-const { isLoggedIn } = useAuth();
-
 const route = useRoute();
-const response = await $fetch(
-  `${config.public.kurocoApiDomain}/rcms-api/1/ltd-news/details/${route.params.slug}`,
+
+const { data: response } = await useFetch(
+  `${config.public.kurocoApiDomain}/rcms-api/1/news/details/1`, //${route.params.id}`,
   {
-    credentials: "include",
-    server: false,
+    credentials: 'include',
+    server: false
   }
-).catch((error) => console.info(error));
+);
+
+// const { data: newsConditionMaster } = await useFetch(
+//   `${config.public.kurocoApiDomain}/rcms-api/1/master`,
+//   {
+//     credentials: "include",
+//     server: false,
+//   }
+// );
 </script>
