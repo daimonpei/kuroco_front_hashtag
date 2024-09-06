@@ -6,6 +6,9 @@
   position: sticky;
   bottom: 0;
   height: 260px;
+  @include sp() {
+    height: 120px;
+  }
   &__nav {
     @include pc() {
       display: flex;
