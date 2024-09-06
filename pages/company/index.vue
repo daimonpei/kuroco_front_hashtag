@@ -11,11 +11,11 @@
 
 <script setup>
 const config = useRuntimeConfig();
-
+const lang = ref(useI18n().locale.value);
 const { data: response } = await useFetch(
-  `${config.public.kurocoApiDomain}/rcms-api/1/content/details/company`,
+  `${config.public.kurocoApiDomain}/rcms-api/1/content/details/company?_lang=${lang.value}`,
   {
-    server: false,
+    server: false
   }
 );
 </script>

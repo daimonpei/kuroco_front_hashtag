@@ -113,6 +113,9 @@
         align-items: center;
       }
       &__item {
+        @include sp() {
+          padding: var(--spacing);
+        }
         a {
           // display: block;
           padding: var(--spacing);

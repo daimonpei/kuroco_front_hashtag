@@ -24,6 +24,10 @@
     left: 0;
     width: 100%;
     clip: rect(0, 100vw, 240px, 0);
+    @include sp() {
+      top: 3em;
+      // clip: rect(0, 100vw, 120px, 0);
+    }
     // clip: rect(
     //   0,
     //   100%,
