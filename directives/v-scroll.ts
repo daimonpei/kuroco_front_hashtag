@@ -3,6 +3,7 @@ import type { DirectiveBinding } from 'vue';
 const vScroll = {
   mounted(el: HTMLElement, binding: DirectiveBinding) {
     let f = function (evt: Event) {
+      // const isMobile = window.innerWidth < 768;
       const top = el.getBoundingClientRect().top;
       const bottom = el.getBoundingClientRect().bottom;
       const elHeight = el.clientHeight;

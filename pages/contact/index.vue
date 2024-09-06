@@ -163,11 +163,11 @@
                           :name="n.key + '[' + i_row + ']'"
                           :value="{
                             ROW: {
-                              key: i_row,
+                              key: i_row
                             },
                             COL: {
-                              key: i_col,
-                            },
+                              key: i_col
+                            }
                           }"
                         />
                       </td>
@@ -209,7 +209,7 @@
                           :id="i_col"
                           v-model="submitData[n.key][i_row - 1].COL"
                           :value="{
-                            key: i_col,
+                            key: i_col
                           }"
                           class="c-form-toggle__checkbox"
                         />
@@ -250,10 +250,10 @@
 </template>
 
 <script setup>
-import Datepicker from "@vuepic/vue-datepicker";
-import "@vuepic/vue-datepicker/dist/main.css";
-import { format } from "date-fns";
-import { ja } from "date-fns/locale";
+import Datepicker from '@vuepic/vue-datepicker';
+import '@vuepic/vue-datepicker/dist/main.css';
+import { format } from 'date-fns';
+import { ja } from 'date-fns/locale';
 
 const config = useRuntimeConfig();
 const submitted = ref(false);
@@ -262,9 +262,9 @@ const errorRef = ref(null);
 const disabled = ref(true);
 const submitData = reactive({});
 const thanksText = ref(null);
-const y = ref("");
-const m = ref("");
-const d = ref("");
+const y = ref('');
+const m = ref('');
+const d = ref('');
 const loading = ref(false);
 const date = ref();
 const dateVar = ref(null);
@@ -280,8 +280,8 @@ const formatDate = (date) => {
 const { data: response } = await useFetch(
   `${config.public.kurocoApiDomain}/rcms-api/1/inquiry/1`,
   {
-    credentials: "include",
-    server: false,
+    credentials: 'include',
+    server: false
   }
 );
 
@@ -296,7 +296,7 @@ Object.keys(response.value.details.cols).forEach((key) => {
     dateVar.value = object.key;
   }
 
-  if (object.type === 10 && object.attribute.selection_type === "multiple") {
+  if (object.type === 10 && object.attribute.selection_type === 'multiple') {
     Object.keys(object.options[1].value).forEach((key) => {
       if (!submitData[object.key]) {
         submitData[object.key] = [];
@@ -304,9 +304,9 @@ Object.keys(response.value.details.cols).forEach((key) => {
 
       submitData[object.key].push({
         ROW: {
-          key: key,
+          key: key
         },
-        COL: [],
+        COL: []
       });
     });
   }
@@ -314,16 +314,16 @@ Object.keys(response.value.details.cols).forEach((key) => {
 
 const handleFileChange = async (e) => {
   const fm = new FormData();
-  fm.append("file", e.target.files[0]);
+  fm.append('file', e.target.files[0]);
 
   try {
     const response = await $fetch(
       `${config.public.kurocoApiDomain}/rcms-api/1/upload`,
       {
-        credentials: "include",
-        method: "POST",
+        credentials: 'include',
+        method: 'POST',
         body: fm,
-        server: false,
+        server: false
       }
     );
     errors.value = [];
@@ -333,8 +333,8 @@ const handleFileChange = async (e) => {
     errors.value = e?.data?.errors || [];
     nextTick(() => {
       errorRef.value.errorWrapperRef.scrollIntoView({
-        behavior: "smooth",
-        block: "center",
+        behavior: 'smooth',
+        block: 'center'
       });
     });
   }
@@ -344,7 +344,7 @@ const handleOnSubmit = async () => {
   if (dateVar.value && submitData[dateVar.value]) {
     const formattedDate = format(
       new Date(submitData[dateVar.value]),
-      "yyyy-MM-dd"
+      'yyyy-MM-dd'
     );
     submitData[dateVar.value] = formattedDate;
   }
@@ -353,10 +353,10 @@ const handleOnSubmit = async () => {
     const response = await $fetch(
       `${config.public.kurocoApiDomain}/rcms-api/1/inquiry/1`,
       {
-        credentials: "include",
-        method: "POST",
+        credentials: 'include',
+        method: 'POST',
         body: submitData,
-        server: false,
+        server: false
       }
     );
     submitted.value = true;
@@ -365,8 +365,8 @@ const handleOnSubmit = async () => {
     errors.value = e?.data?.errors || [];
     nextTick(() => {
       errorRef.value.errorWrapperRef.scrollIntoView({
-        behavior: "smooth",
-        block: "center",
+        behavior: 'smooth',
+        block: 'center'
       });
     });
   }

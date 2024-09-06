@@ -1,9 +1,9 @@
 <template>
   <div>
     <UiPageHeader
-      :path="[{ label: '会員限定コンテンツ', to: '/ltd-news/' }]"
-      subject="会員限定コンテンツ"
-      subheading="For Members"
+      :path="[{ label: '開発/投資実績', to: '/ltd-news/' }]"
+      subject="開発/投資実績"
+      subheading="Achievements"
     />
 
     <div class="l-container--large l-container--contents">
@@ -25,9 +25,7 @@
 
         <hr />
         <div class="l-container--contents u-pt-30 u-text-align-center">
-          <NuxtLink :to="'/ltd-news/'" class="c-button">
-            会員限定コンテンツ一覧へ戻る
-          </NuxtLink>
+          <NuxtLink :to="'/ltd-news/'" class="c-button"> 一覧へ戻る </NuxtLink>
         </div>
       </article>
 
@@ -58,29 +56,29 @@
 </template>
 
 <script setup>
-// const config = useRuntimeConfig();
-
-// const { isLoggedIn } = useAuth();
-
-// const route = useRoute();
-// const response = await $fetch(
-//   `${config.public.kurocoApiDomain}/rcms-api/1/ltd-news/details/${route.params.slug}`,
-//   {
-//     credentials: "include",
-//     server: false,
-//   }
-// ).catch((error) => console.info(error));
-
 const config = useRuntimeConfig();
-const route = useRoute();
 
-const { data: response } = await useFetch(
-  `${config.public.kurocoApiDomain}/rcms-api/1/news/details/1`, //${route.params.id}`,
+const { isLoggedIn } = useAuth();
+
+const route = useRoute();
+const response = await $fetch(
+  `${config.public.kurocoApiDomain}/rcms-api/1/ltd-news/details/${route.params.slug}`,
   {
     credentials: 'include',
     server: false
   }
-);
+).catch((error) => console.info(error));
+
+// const config = useRuntimeConfig();
+// const route = useRoute();
+
+// const { data: response } = await useFetch(
+//   `${config.public.kurocoApiDomain}/rcms-api/1/news/details/1`, //${route.params.id}`,
+//   {
+//     credentials: 'include',
+//     server: false
+//   }
+// );
 
 // const { data: newsConditionMaster } = await useFetch(
 //   `${config.public.kurocoApiDomain}/rcms-api/1/master`,

@@ -18,7 +18,8 @@
 const props = defineProps({
   list: {
     type: Array,
-    default: () => [],
-  },
+    default: () => []
+  }
 });
+console.log(props.list);
 </script>

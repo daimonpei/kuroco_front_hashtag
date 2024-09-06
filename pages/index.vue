@@ -30,14 +30,26 @@
     >
       <div class="c-section--image-text">
         <div class="u-display-flex-grow-2">
-          <p class="c-heading--sub">Our Service</p>
+          <p
+            v-scroll="delay"
+            class="c-heading--sub transition transition_fadeInLeft"
+          >
+            Our Service
+          </p>
           <div class="flex-items">
             <div
               v-scroll="delay"
               class="flex-item transition transition_fadeInUp delay_500"
               id="top-service1"
             >
-              <h2 class="c-heading--lv2">豊富な経験と<br />専門知識</h2>
+              <img
+                class="top-service-icon"
+                src="~/assets/image/service_1.png"
+                alt="豊富な経験と専門知識"
+              />
+              <h2 class="c-heading--lv2 service-lead">
+                豊富な経験と<br />専門知識
+              </h2>
               <p class="c-text">
                 ホテルファンドの組成・運用に特化したエキスパートが、確かな経験と深い専門知識で投資機会を最大化します
               </p>
@@ -47,7 +59,14 @@
               class="flex-item transition transition_fadeInUp delay_750"
               id="top-service2"
             >
-              <h2 class="c-heading--lv2">ワンストップ<br />トータルサービス</h2>
+              <img
+                class="top-service-icon"
+                src="~/assets/image/service_3.png"
+                alt="ワンストップトータルサービス"
+              />
+              <h2 class="c-heading--lv2 service-lead">
+                ワンストップ<br />トータルサービス
+              </h2>
               <p class="c-text">
                 ソーシングからアセットマネジメント、出口戦略まで、一貫したサポートで複雑な投資プロセスをスムーズに進めます
               </p>
@@ -57,7 +76,12 @@
               class="flex-item transition transition_fadeInUp delay_1000"
               id="top-service3"
             >
-              <h2 class="c-heading--lv2">
+              <img
+                class="top-service-icon"
+                src="~/assets/image/service_2.png"
+                alt="戦略的投資"
+              />
+              <h2 class="c-heading--lv2 service-lead">
                 高リターンを目指<br />した戦略的投資
               </h2>
               <p class="c-text">
@@ -77,10 +101,86 @@
       ></div>
     </section>
 
+    <section class="l-container--contents l-container--aboutus">
+      <div class="l-container--large">
+        <div class="u-display-flex u-display-flex-align-items-center u-mb-20">
+          <div class="u-display-flex-grow-1">
+            <p
+              v-scroll="delay"
+              class="c-heading--sub transition transition_fadeInLeft"
+            >
+              About Us
+            </p>
+            <div class="rect">
+              <img src="~/assets/image/person_1.png" />
+            </div>
+
+            <h2 class="c-heading--lv1">豊富な経験と実績を活かして</h2>
+            <p class="greet">
+              当社は、ホテル投資に特化し、豊富な経験と実績を活かして投資家の皆様に安心かつ高収益な投資機会を提供いたします。昨今の観光業回復やインバウンド需要の高まりを背景に、ホテル業界の成長が加速しております。これを機に、当社は資産価値の最大化を目指し、独自の投資戦略でお客様の信頼にお応えしてまいります。
+            </p>
+          </div>
+          <div class="u-display-flex-shrink-0 detail-to-aboutus">
+            <NuxtLink to="/company/" class="c-button u-mb-20"
+              >詳細を見る</NuxtLink
+            >
+          </div>
+        </div>
+
+        <div
+          v-scroll="delay"
+          class="after transition transition_fadeInLeft stripe"
+          id="top-aboutus-after"
+        ></div>
+      </div>
+    </section>
+
+    <section class="l-container--contents l-container--achivement">
+      <div class="l-container--large">
+        <div class="u-display-flex u-display-flex-align-items-center u-mb-20">
+          <div class="u-display-flex-grow-1">
+            <p
+              v-scroll="delay"
+              class="c-heading--sub transition transition_fadeInLeft"
+            >
+              Achievements
+            </p>
+            <h2 class="c-heading--lv1">投資/開発実績</h2>
+          </div>
+          <div class="u-display-flex-shrink-0">
+            <NuxtLink to="/ltd-news/" class="c-button u-mb-20"
+              >一覧を見る</NuxtLink
+            >
+          </div>
+        </div>
+
+        <div
+          v-scroll="delay"
+          id="menber-cards"
+          class="transition transition_fadeInUp"
+        >
+          <UiCardList
+            v-if="ltdNews?.data?.list?.length > 0"
+            :list="ltdNews.data.list"
+          ></UiCardList>
+        </div>
+        <div
+          v-scroll="delay"
+          class="after transition transition_fadeInLeft stripe"
+          id="top-achivement-after"
+        ></div>
+      </div>
+    </section>
+
     <section class="l-container--large l-container--contents">
       <div class="c-section--list">
         <div class="c-section--list__heading">
-          <p class="c-heading--sub">News Release</p>
+          <p
+            v-scroll="delay"
+            class="c-heading--sub transition transition_fadeInLeft"
+          >
+            News Release
+          </p>
           <h2 class="c-heading--lv1">ニュースリリース</h2>
           <NuxtLink to="/news/" class="c-button">一覧を見る</NuxtLink>
         </div>
@@ -102,33 +202,6 @@
             </li>
           </ul>
           <p v-else>記事が存在しません</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="l-container--contents c-section--bg">
-      <div class="l-container--large">
-        <div class="u-display-flex u-display-flex-align-items-center u-mb-20">
-          <div class="u-display-flex-grow-1">
-            <p class="c-heading--sub">Achievements</p>
-            <h2 class="c-heading--lv1">投資/開発実績</h2>
-          </div>
-          <div class="u-display-flex-shrink-0">
-            <NuxtLink to="/ltd-news/" class="c-button u-mb-20"
-              >一覧を見る</NuxtLink
-            >
-          </div>
-        </div>
-
-        <div
-          v-scroll="delay"
-          id="menber-cards"
-          class="transition transition_fadeInUp"
-        >
-          <UiCardList
-            v-if="ltdNews?.data?.list?.length > 0"
-            :list="ltdNews.data.list"
-          ></UiCardList>
         </div>
       </div>
     </section>
@@ -207,14 +280,6 @@ const handleScrollHero = (el, status) => {
 // .transition.animate__animated {
 //   opacity: 1;
 // }
-.flex-items {
-  display: flex;
-  justify-content: space-between;
-  .flex-item {
-    width: 30%;
-    padding: 1.6em;
-  }
-}
 
 .l-container--services .after {
   display: block;
@@ -223,7 +288,49 @@ const handleScrollHero = (el, status) => {
   position: absolute;
   bottom: 110px;
   left: -30px;
-  background-color: #7b9bb3;
+  background-color: var(--color-light-gray);
   z-index: -1;
+}
+.l-container--achivement .after {
+  display: block;
+  width: 300vw;
+  height: 320px;
+  position: absolute;
+  bottom: 110px;
+  right: -30px;
+  background-color: var(--color-light-gray);
+  z-index: -1;
+}
+
+.top-service-icon {
+  width: 66%;
+  margin: 20px auto;
+}
+.service-lead {
+  margin-top: 1em;
+}
+
+.rect {
+  width: 380px;
+  height: 380px;
+  overflow: hidden;
+  position: absolute;
+  right: 10vw;
+  top: 0;
+  img {
+    position: relative;
+    top: 0;
+    width: 1180px;
+    max-width: none;
+    right: 160px;
+  }
+}
+.greet {
+  width: 50%;
+}
+.detail-to-aboutus {
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }
 </style>
