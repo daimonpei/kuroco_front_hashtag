@@ -149,11 +149,6 @@
             </p>
             <h2 class="c-heading--lv1">投資/開発実績</h2>
           </div>
-          <div class="u-display-flex-shrink-0">
-            <NuxtLink to="/ltd-news/" class="c-button u-mb-20"
-              >一覧を見る</NuxtLink
-            >
-          </div>
         </div>
 
         <div
@@ -165,6 +160,11 @@
             v-if="ltdNews?.data?.list?.length > 0"
             :list="ltdNews.data.list"
           ></UiCardList>
+        </div>
+        <div class="u-display-flex-shrink-0">
+          <NuxtLink to="/ltd-news/" class="c-button c-button__full"
+            >一覧を見る</NuxtLink
+          >
         </div>
         <div
           v-scroll="delay"
