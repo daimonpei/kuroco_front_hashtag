@@ -4,10 +4,10 @@
       <nav class="l-footer__nav">
         <ul class="l-footer__nav__list">
           <li>
-            <NuxtLink to="/privacy/">プライバシーポリシー</NuxtLink>
+            <NuxtLink to="/privacy/">{{ $t('nav.policy') }}</NuxtLink>
           </li>
           <li>
-            <a href="#">利用規約</a>
+            <a href="#">{{ $t('nav.terms') }}</a>
           </li>
         </ul>
       </nav>

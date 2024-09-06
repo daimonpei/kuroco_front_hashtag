@@ -45,13 +45,12 @@
               <img
                 class="top-service-icon"
                 src="~/assets/image/service_1.png"
-                alt="豊富な経験と専門知識"
               />
               <h2 class="c-heading--lv2 service-lead">
-                豊富な経験と<br />専門知識
+                {{ $t('services.title1') }}
               </h2>
               <p class="c-text">
-                ホテルファンドの組成・運用に特化したエキスパートが、確かな経験と深い専門知識で投資機会を最大化します
+                {{ $t('services.text1') }}
               </p>
             </div>
             <div
@@ -62,13 +61,12 @@
               <img
                 class="top-service-icon"
                 src="~/assets/image/service_3.png"
-                alt="ワンストップトータルサービス"
               />
               <h2 class="c-heading--lv2 service-lead">
-                ワンストップ<br />トータルサービス
+                {{ $t('services.title2') }}
               </h2>
               <p class="c-text">
-                ソーシングからアセットマネジメント、出口戦略まで、一貫したサポートで複雑な投資プロセスをスムーズに進めます
+                {{ $t('services.text2') }}
               </p>
             </div>
             <div
@@ -79,19 +77,18 @@
               <img
                 class="top-service-icon"
                 src="~/assets/image/service_2.png"
-                alt="戦略的投資"
               />
               <h2 class="c-heading--lv2 service-lead">
-                高リターンを目指<br />した戦略的投資
+                {{ $t('services.title3') }}
               </h2>
               <p class="c-text">
-                コア投資から高難易度オポチュニティ投資まで、御社のニーズに応じた最適な投資戦略を提案・実行します
+                {{ $t('services.text3') }}
               </p>
             </div>
           </div>
-          <NuxtLink to="/service/" class="c-button c-button__full"
-            >事業内容を見る</NuxtLink
-          >
+          <NuxtLink to="/service/" class="c-button c-button__full">{{
+            $t('readmore')
+          }}</NuxtLink>
         </div>
       </div>
       <div
@@ -117,15 +114,17 @@
               <img src="~/assets/image/person_1.png" />
             </div>
 
-            <h2 class="c-heading--lv1">豊富な経験と実績を活かして</h2>
+            <h2 class="c-heading--lv1 greet-title">
+              {{ $t('aboutus.title') }}
+            </h2>
             <p class="greet">
-              当社は、ホテル投資に特化し、豊富な経験と実績を活かして投資家の皆様に安心かつ高収益な投資機会を提供いたします。昨今の観光業回復やインバウンド需要の高まりを背景に、ホテル業界の成長が加速しております。これを機に、当社は資産価値の最大化を目指し、独自の投資戦略でお客様の信頼にお応えしてまいります。
+              {{ $t('aboutus.text') }}
             </p>
           </div>
           <div class="u-display-flex-shrink-0 detail-to-aboutus">
-            <NuxtLink to="/company/" class="c-button u-mb-20"
-              >詳細を見る</NuxtLink
-            >
+            <NuxtLink to="/company/" class="c-button u-mb-20">{{
+              $t('readmore')
+            }}</NuxtLink>
           </div>
         </div>
 
@@ -147,7 +146,7 @@
             >
               Achievements
             </p>
-            <h2 class="c-heading--lv1">投資/開発実績</h2>
+            <h2 class="c-heading--lv1"></h2>
           </div>
         </div>
 
@@ -162,9 +161,9 @@
           ></UiCardList>
         </div>
         <div class="u-display-flex-shrink-0">
-          <NuxtLink to="/ltd-news/" class="c-button c-button__full"
-            >一覧を見る</NuxtLink
-          >
+          <NuxtLink to="/ltd-news/" class="c-button c-button__full">{{
+            $t('readmore')
+          }}</NuxtLink>
         </div>
         <div
           v-scroll="delay"
@@ -183,8 +182,7 @@
           >
             News Release
           </p>
-          <h2 class="c-heading--lv1">ニュースリリース</h2>
-          <NuxtLink to="/news/" class="c-button">一覧を見る</NuxtLink>
+          <NuxtLink to="/news/" class="c-button">{{ $t('readmore') }}</NuxtLink>
         </div>
 
         <div class="u-display-flex-grow-1">
@@ -203,7 +201,7 @@
               </NuxtLink>
             </li>
           </ul>
-          <p v-else>記事が存在しません</p>
+          <p v-else>{{ $t('nopost') }}</p>
         </div>
       </div>
     </section>

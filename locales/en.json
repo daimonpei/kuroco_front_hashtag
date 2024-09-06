@@ -9,10 +9,29 @@
     "company": "COMPANY",
     "service": "SERVICES",
     "news": "NEWS/RELEASE",
-    "contact": "CONTACT"
+    "contact": "CONTACT",
+    "policy": "PRIVACY POLICY",
+    "terms": "TERMS OF USE"
   },
+  "readmore": "Read More",
+  "nopost": "No posts",
   "hero": {
     "lead": "#Real Estate Investment Management",
     "text": "Real Estate Investment Management"
+  },
+  "services": {
+    "title1": "Expertise and Experience",
+    "text1": "Experts specializing in the composition and operation of hotel funds maximize investment opportunities with solid experience and deep expertise",
+    "title2": "One-Stop Total Service",
+    "text2": "From sourcing to asset management and exit strategies, we provide consistent support to smoothly navigate complex investment processes",
+    "title3": "High-Return Strategy",
+    "text3": "Suggest and execute the optimal investment strategy tailored to your needs, from core investments to high-difficulty opportunity investments"
+  },
+  "aboutus": {
+    "title": "Leveraging Rich Experience and Track Record",
+    "text": "We specialize in hotel investments and provide investors with secure and high-yield investment opportunities by leveraging our rich experience and track record. Against the backdrop of recent recovery in the tourism industry and increasing inbound demand, the hotel industry is accelerating its growth. We aim to maximize asset value and respond to your trust with our unique investment strategy."
+  },
+  "achievements": {
+    "title": "Investment/Development Achievements"
   }
 }
