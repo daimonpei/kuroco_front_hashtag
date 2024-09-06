@@ -98,7 +98,7 @@
         width: 100%;
         height: calc(100% - var(--header-height-sp));
         padding-top: var(--spacing-horizontal-sp);
-        background-color: var(--color-white);
+        background-color: var(--color-base);
         z-index: 100;
         transition: var(--transition-seconds) ease-out;
         .l-header.is-open & {
@@ -125,6 +125,12 @@
           }
           &:hover {
             color: var(--color-primary);
+          }
+        }
+        & > div {
+          @include sp() {
+            padding: var(--spacing) var(--spacing-horizontal-sp) !important;
+            font-weight: bold;
           }
         }
       }

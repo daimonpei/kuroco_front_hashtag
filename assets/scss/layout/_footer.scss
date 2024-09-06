@@ -3,9 +3,9 @@
   // background-color: var(--color-dark-gray);
   background-color: #404040;
   color: var(--color-white);
-  position: sticky;
+  // position: sticky;
   bottom: 0;
-  height: 260px;
+  height: 120px;
   @include sp() {
     height: 120px;
   }

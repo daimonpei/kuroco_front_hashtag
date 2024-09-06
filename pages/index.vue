@@ -103,7 +103,9 @@
 
     <section class="l-container--contents l-container--aboutus">
       <div class="l-container--large">
-        <div class="u-display-flex u-display-flex-align-items-center u-mb-20">
+        <div
+          class="u-display-flex u-display-flex-align-items-center u-mb-20 l-container--aboutus-inner"
+        >
           <div class="u-display-flex-grow-1">
             <p
               v-scroll="delay"
@@ -272,65 +274,3 @@ const handleScrollHero = (el, status) => {
   }
 };
 </script>
-
-<style lang="scss" scoped>
-.transition {
-  opacity: 0;
-}
-// .transition.animate__animated {
-//   opacity: 1;
-// }
-
-.l-container--services .after {
-  display: block;
-  width: 300vw;
-  height: 320px;
-  position: absolute;
-  bottom: 110px;
-  left: -30px;
-  background-color: var(--color-light-gray);
-  z-index: -1;
-}
-.l-container--achivement .after {
-  display: block;
-  width: 300vw;
-  height: 320px;
-  position: absolute;
-  bottom: 110px;
-  right: -30px;
-  background-color: var(--color-light-gray);
-  z-index: -1;
-}
-
-.top-service-icon {
-  width: 66%;
-  margin: 20px auto;
-}
-.service-lead {
-  margin-top: 1em;
-}
-
-.rect {
-  width: 380px;
-  height: 380px;
-  overflow: hidden;
-  position: absolute;
-  right: 10vw;
-  top: 0;
-  img {
-    position: relative;
-    top: 0;
-    width: 1180px;
-    max-width: none;
-    right: 160px;
-  }
-}
-.greet {
-  width: 50%;
-}
-.detail-to-aboutus {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-}
-</style>
