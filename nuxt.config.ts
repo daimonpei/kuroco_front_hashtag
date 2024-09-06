@@ -48,7 +48,8 @@ export default defineNuxtConfig({
     families: {
       'Noto Sans JP': [400, 700],
       Helvetica: [400, 700],
-      'Secular One': [400, 700]
+      'Secular One': [400, 700],
+      Lora: [500]
     }
   },
 

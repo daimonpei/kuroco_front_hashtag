@@ -13,7 +13,7 @@
 .c-heading--lv2 {
   @extend %heading;
   padding-bottom: var(--spacing-small);
-  border-bottom: 1px solid var(--color-primary);
+  border-bottom: 6px solid var(--color-primary);
   font-size: var(--font-size-h2);
   @include sp() {
     font-size: var(--font-size-h2-sp);
@@ -58,9 +58,11 @@
 }
 .c-heading--sub {
   margin: var(--spacing) 0;
-  color: var(--color-primary);
-  font-size: var(--font-size-small);
-  // font-family: 'Secular One', sans-serif;
+  // color: var(--color-primary);
+  color: #666;
+  // font-size: var(--font-size-small);
+  font-size: 6rem;
+  font-family: 'Lora', serif;
   letter-spacing: 0.05em;
   .c-section--dark-block & {
     color: #f9f001;
