@@ -214,7 +214,7 @@
     </section>
   </div>
   <div class="scroll-nav" v-scroll="handleScrollScrollNav">
-    <span class="material-symbols-outlined icon icon-up"
+    <span class="material-symbols-outlined icon icon-up" @click="scrollToTop"
       >keyboard_double_arrow_up</span
     >
     <span class="material-symbols-outlined icon icon-down"
@@ -316,6 +316,13 @@ const handleScrollScrollNav = (el, status) => {
   }
 };
 
+const scrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+};
+
 onMounted(() => {
   setTimeout(() => {
     heroText.value.style.visibility = 'visible';
@@ -347,11 +354,8 @@ onMounted(() => {
       }
     }
     &.icon-down {
-      color: #fff;
       opacity: 0.8;
       display: block;
-      right: 50vw;
-      transform: translateX(50%);
       @keyframes scroll {
         0% {
           transform: translateY(0);
