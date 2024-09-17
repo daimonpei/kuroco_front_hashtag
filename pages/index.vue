@@ -334,7 +334,7 @@ onMounted(() => {
 <style lang="scss" scoped>
 .scroll-nav {
   position: fixed;
-  bottom: 50px;
+  bottom: 30px;
   right: 0;
   color: var(--color-base);
   .icon {
