@@ -30,16 +30,16 @@
   &__body {
     position: absolute;
     padding-top: 1em;
-    padding-left: 4%;
-    padding-right: 2%;
+    padding-left: 0;
+    padding-right: 0;
     bottom: 180px;
     width: 66vw;
-    background-color: var(--color-base);
+    // background-color: var(--color-base);
     min-height: 11em;
     @include sp() {
-      bottom: calc(var(--spacing-vertical-sp) * -1);
+      bottom: 0.5em;
       width: 90%;
-      padding-left: 2em;
+      // padding-left: 2em;
       min-height: 8em;
     }
     &__lead {
@@ -48,39 +48,44 @@
       // font-family: 'Secular One', sans-serif;
       font-family: 'Lora', serif;
       line-height: 1.3;
-      padding-right: var(--spacing-horizontal-sp);
+
+      padding: 0.5em 1em 0.15em 1em;
+
       color: var(--color-white);
       letter-spacing: 0.025em;
-      text-indent: -0.8em;
+      // text-indent: -0.8em;
+
+      background-color: var(--color-base);
+
       @include sp() {
         // font-size: 10vw;
         font-size: 6vw;
-        text-indent: -0.8em;
-        padding-left: -0.8em;
+        // text-indent: -0.8em;
+        padding-left: var(--spacing-horizontal-sp);
       }
     }
     &__text {
-      margin: var(--spacing) 0;
+      // margin: var(--spacing) 0;
+      margin: 0;
       font-family: var(--font-family-serif);
-      // padding: 0 var(--spacing);
       // font-weight: bold;
       letter-spacing: 0.05em;
-      color: var(--color-white);
-      @include pc() {
-        font-size: var(--font-size-h4);
-      }
+      // color: var(--color-white);
+      // @include pc() {
+      //   font-size: var(--font-size-h4);
+      // }
       // @include sp() {
       //   display: none;
       // }
+      color: var(--color-base);
+      padding: 0.33em 0.1em 0.2em 1em;
+      font-size: 3.4em;
+      @include sp() {
+        font-size: 1.8em;
+        line-height: 1.3em;
+        padding-left: var(--spacing-horizontal-sp);
+      }
     }
-  }
-}
-
-.l-container--services .c-hero__body__text {
-  color: #000;
-  font-size: 3.6em;
-  @include sp() {
-    font-size: 2.4em;
   }
 }
 
@@ -152,10 +157,11 @@
   }
 }
 .service-lead {
-  margin-top: 1em;
-  @include sp() {
-    margin: 0 !important;
-  }
+  margin: 0 !important;
+  font-size: 1.7em !important;
+  // @include sp() {
+  //   margin: 0 !important;
+  // }
 }
 
 .transition {
@@ -168,9 +174,9 @@
 .l-container--services .after {
   display: block;
   width: 300vw;
-  height: 320px;
+  height: 460px;
   position: absolute;
-  bottom: 110px;
+  bottom: 100px;
   left: -30px;
   background-color: var(--color-light-gray);
   z-index: -1;
@@ -181,9 +187,9 @@
 .l-container--achivement .after {
   display: block;
   width: 300vw;
-  height: 320px;
+  height: 360px;
   position: absolute;
-  bottom: 110px;
+  bottom: 20px;
   right: -30px;
   background-color: var(--color-light-gray);
   z-index: -1;

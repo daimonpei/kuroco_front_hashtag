@@ -18,14 +18,22 @@
   "nopost": "No posts",
   "hero": {
     "lead": "#Real Estate Investment Management",
-    "text": "We contribute to the development of the tourism industry and regional revitalization through investments in hotels and ryokans."
+    "text": "We contribute to the development of the tourism industry and regional revitalization through investments in hotels and ryokans.",
+    "text1": "",
+    "text2": ""
   },
   "services": {
     "title1": "Expertise and Experience",
+    "title1-1": "",
+    "title1-2": "",
     "text1": "Experts specializing in the composition and operation of hotel funds maximize investment opportunities with solid experience and deep expertise",
     "title2": "One-Stop Total Service",
+    "title2-1": "",
+    "title2-2": "",
     "text2": "From sourcing to asset management and exit strategies, we provide consistent support to smoothly navigate complex investment processes",
     "title3": "High-Return Strategy",
+    "title3-1": "",
+    "title3-2": "",
     "text3": "Suggest and execute the optimal investment strategy tailored to your needs, from core investments to high-difficulty opportunity investments"
   },
   "aboutus": {

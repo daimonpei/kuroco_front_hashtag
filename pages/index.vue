@@ -14,23 +14,21 @@
         playsinline
         class="c-hero__image"
       ></video>
-      <div
-        class="c-hero__body animate__animated animate__fadeInLeft"
-        id="c-hero__body"
-      >
-        <p class="c-hero__body__lead">{{ $t('hero.lead') }}</p>
-        <!-- <p class="c-hero__body__text">
-          {{ $t('hero.text') }}
-        </p> -->
+      <div class="c-hero__body" id="c-hero__body">
+        <p class="c-hero__body__lead animate__animated animate__fadeInLeft">
+          {{ $t('hero.lead') }}
+        </p>
+        <p ref="heroText" class="c-hero__body__text" style="visibility: hidden">
+          {{ $t('hero.text') }}{{ $t('hero.text1') }}<br />{{
+            $t('hero.text2')
+          }}
+        </p>
       </div>
     </section>
 
     <section
       class="l-container--large l-container--contents l-container--services"
     >
-      <p class="c-hero__body__text">
-        {{ $t('hero.text') }}
-      </p>
       <div class="c-section--image-text">
         <div class="u-display-flex-grow-2">
           <p
@@ -50,7 +48,9 @@
                 src="~/assets/image/service_1.png"
               />
               <h2 class="c-heading--lv2 service-lead">
-                {{ $t('services.title1') }}
+                {{ $t('services.title1') }}{{ $t('services.title1-1') }}<br />{{
+                  $t('services.title1-2')
+                }}
               </h2>
               <p class="c-text">
                 {{ $t('services.text1') }}
@@ -66,7 +66,9 @@
                 src="~/assets/image/service_3.png"
               />
               <h2 class="c-heading--lv2 service-lead">
-                {{ $t('services.title2') }}
+                {{ $t('services.title2') }}{{ $t('services.title2-1') }}<br />{{
+                  $t('services.title2-2')
+                }}
               </h2>
               <p class="c-text">
                 {{ $t('services.text2') }}
@@ -82,7 +84,9 @@
                 src="~/assets/image/service_2.png"
               />
               <h2 class="c-heading--lv2 service-lead">
-                {{ $t('services.title3') }}
+                {{ $t('services.title3') }}{{ $t('services.title3-1') }}<br />{{
+                  $t('services.title3-2')
+                }}
               </h2>
               <p class="c-text">
                 {{ $t('services.text3') }}
@@ -212,6 +216,7 @@
 </template>
 
 <script setup>
+import { ref, onMounted } from 'vue';
 const config = useRuntimeConfig();
 
 const { data: news } = await useFetch(
@@ -274,4 +279,13 @@ const handleScrollHero = (el, status) => {
     header.classList.remove('l-header--fixed');
   }
 };
+
+const heroText = ref(null);
+
+onMounted(() => {
+  setTimeout(() => {
+    heroText.value.style.visibility = 'visible';
+    heroText.value.classList.add('animate__animated', 'animate__fadeInLeft');
+  }, 800);
+});
 </script>
