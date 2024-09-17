@@ -213,6 +213,14 @@
       </div>
     </section>
   </div>
+  <div class="scroll-nav" v-scroll="handleScrollScrollNav">
+    <span class="material-symbols-outlined icon icon-up"
+      >keyboard_double_arrow_up</span
+    >
+    <span class="material-symbols-outlined icon icon-down"
+      >keyboard_double_arrow_down</span
+    >
+  </div>
 </template>
 
 <script setup>
@@ -249,7 +257,7 @@ const delay = (el, status) => {
           'delay_0'
       ).replace('delay_', '')
     );
-    console.log({ transition, delay });
+    // console.log({ transition, delay });
     if (transition) {
       if (delay) {
         setTimeout(() => {
@@ -281,11 +289,85 @@ const handleScrollHero = (el, status) => {
 };
 
 const heroText = ref(null);
+const handleScrollScrollNav = (el, status) => {
+  const iconUp = document.querySelector('.icon-up');
+  const iconDown = document.querySelector('.icon-down');
+  console.log(status.scrollPercentage);
+  if (status.scrollPercentage < 15) {
+    iconUp.classList.add('onTop');
+    iconDown.classList.add('onTop');
+    iconDown.classList.remove('onBody');
+  } else {
+    iconUp.classList.remove('onTop');
+    iconDown.classList.remove('onTop');
+    iconDown.classList.add('onBody');
+  }
+  if (status.scrollPercentage >= 50) {
+    iconUp.classList.add('onBody');
+  } else {
+    iconUp.classList.remove('onBody');
+  }
+  if (status.scrollPercentage >= 99) {
+    iconUp.classList.add('onBottom');
+    iconDown.classList.add('onBottom');
+  } else {
+    iconUp.classList.remove('onBottom');
+    iconDown.classList.remove('onBottom');
+  }
+};
 
 onMounted(() => {
   setTimeout(() => {
     heroText.value.style.visibility = 'visible';
-    heroText.value.classList.add('animate__animated', 'animate__fadeInLeft');
+    heroText.value.classList.add('animate__animated', 'animate__fadeInUp');
   }, 800);
 });
 </script>
+
+<style lang="scss" scoped>
+.scroll-nav {
+  position: fixed;
+  bottom: 50px;
+  right: 0;
+  color: var(--color-base);
+  .icon {
+    font-size: 5em;
+    position: absolute;
+    bottom: 0;
+    &.icon-up {
+      display: none;
+      right: 0;
+      cursor: pointer;
+      &.onBody {
+        display: block;
+      }
+      &.onBottom {
+        display: block;
+        color: #fff;
+      }
+    }
+    &.icon-down {
+      color: #fff;
+      opacity: 0.8;
+      display: block;
+      right: 50vw;
+      transform: translateX(50%);
+      @keyframes scroll {
+        0% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(10px);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
+      animation: scroll 1s infinite;
+      &.onBody {
+        display: none;
+      }
+    }
+  }
+}
+</style>

@@ -50,7 +50,8 @@ export default defineNuxtConfig({
       'Noto Serif JP': [400, 700],
       Helvetica: [400, 700],
       'Secular One': [400, 700],
-      Lora: [500]
+      Lora: [500],
+      'Material Symbols Outlined': [400]
     }
   },
 

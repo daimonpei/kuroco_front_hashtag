@@ -32,9 +32,20 @@ const vScroll = {
         visibility = 'visible';
       }
 
+      // window.scrollYが、document高の何%に位置しているか
+      const doc = document.getElementById('__nuxt');
+      let scrollPercentage = null;
+      if (doc) {
+        const documentHeight = doc.clientHeight;
+        const windowHeight = window.innerHeight;
+        console.log(documentHeight, '>', windowHeight);
+        scrollPercentage =
+          (window.scrollY / (documentHeight - windowHeight)) * 100;
+      }
       if (
         binding.value(el, {
           scrollTop: window.scrollY, //スクロール位置
+          scrollPercentage, //スクロール位置のパーセンテージ
           top, //アイテムの現在位置（画面上端からの距離）
           bottom, //アイテムの現在位置（画面下端からの距離）
           elHeight, //アイテムの高さ
