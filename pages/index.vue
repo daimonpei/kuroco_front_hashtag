@@ -339,8 +339,8 @@ onMounted(() => {
   color: var(--color-base);
   .icon {
     font-size: 5em;
-    position: absolute;
-    bottom: 0;
+    // position: absolute;
+    // bottom: 0;
     &.icon-up {
       display: none;
       right: 0;
