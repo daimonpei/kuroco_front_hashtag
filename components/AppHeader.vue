@@ -40,6 +40,11 @@
               }}</NuxtLink>
             </li>
             <li class="l-header__nav__list__item">
+              <NuxtLink to="/recruit/" @click.native="Drawer = false">{{
+                $t('nav.recruit')
+              }}</NuxtLink>
+            </li>
+            <li class="l-header__nav__list__item">
               <NuxtLink to="/contact/" @click.native="Drawer = false">{{
                 $t('nav.contact')
               }}</NuxtLink>

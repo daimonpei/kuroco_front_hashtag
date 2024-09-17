@@ -189,6 +189,10 @@
     }
     .l-header__inner {
       padding: var(--spacing) var(--spacing-horizontal-pc);
+      @include sp() {
+        height: var(--header-height-sp);
+        padding: var(--spacing) var(--spacing-horizontal-sp);
+      }
     }
     .l-header__nav__list__item a {
       color: var(--color-white);

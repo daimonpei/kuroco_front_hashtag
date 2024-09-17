@@ -47,6 +47,7 @@ export default defineNuxtConfig({
   googleFonts: {
     families: {
       'Noto Sans JP': [400, 700],
+      'Noto Serif JP': [400, 700],
       Helvetica: [400, 700],
       'Secular One': [400, 700],
       Lora: [500]

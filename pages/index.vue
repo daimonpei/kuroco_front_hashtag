@@ -19,15 +19,18 @@
         id="c-hero__body"
       >
         <p class="c-hero__body__lead">{{ $t('hero.lead') }}</p>
-        <p class="c-hero__body__text">
+        <!-- <p class="c-hero__body__text">
           {{ $t('hero.text') }}
-        </p>
+        </p> -->
       </div>
     </section>
 
     <section
       class="l-container--large l-container--contents l-container--services"
     >
+      <p class="c-hero__body__text">
+        {{ $t('hero.text') }}
+      </p>
       <div class="c-section--image-text">
         <div class="u-display-flex-grow-2">
           <p

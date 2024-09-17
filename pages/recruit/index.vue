@@ -1,6 +1,6 @@
 <template>
-  <div class="page-company">
-    <UiPageHeader :subject="response.details.subject" subheading="Company" />
+  <div class="page-recruit">
+    <UiPageHeader :subject="response.details.subject" subheading="Recruit" />
     <article class="c-article">
       <div class="l-container--large l-container--contents">
         <div v-html="response.details.contents"></div>
@@ -13,16 +13,9 @@
 const config = useRuntimeConfig();
 const lang = ref(useI18n().locale.value);
 const { data: response } = await useFetch(
-  `${config.public.kurocoApiDomain}/rcms-api/1/content/details/company?_lang=${lang.value}`,
+  `${config.public.kurocoApiDomain}/rcms-api/1/content/details/recruit?_lang=${lang.value}`,
   {
     server: false
   }
 );
 </script>
-
-<style>
-.page-company iframe {
-  width: 100% !important;
-  height: 320px !important;
-}
-</style>

@@ -11,13 +11,14 @@
     "news": "NEWS/RELEASE",
     "contact": "お問い合わせ",
     "policy": "プライバシーポリシー",
-    "terms": "利用規約"
+    "terms": "利用規約",
+    "recruit": "採用情報"
   },
   "readmore": "もっと見る",
   "nopost": "記事がありません",
   "hero": {
     "lead": "#Real Estate Investment Management",
-    "text": "Real Estate Investment Management"
+    "text": "ホテル・旅館への投資を通じて観光産業の発展と地域創生に貢献します"
   },
   "services": {
     "title1": "豊富な経験と専門知識",

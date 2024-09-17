@@ -1,9 +1,9 @@
 .c-hero {
   position: relative;
-  margin-bottom: var(--spacing-vertical-pc);
+  // margin-bottom: var(--spacing-vertical-pc);
   // padding: var(--spacing-horizontal-pc) 0 var(--spacing-vertical-pc);
   @include sp() {
-    margin-bottom: var(--spacing-vertical-sp);
+    // margin-bottom: var(--spacing-vertical-sp);
     // padding: var(--spacing-horizontal-sp) 0 calc(var(--spacing-vertical-sp) * 4);
   }
   &__hash {
@@ -15,6 +15,7 @@
     // transform: translate(0, -50%);
     @include sp() {
       bottom: 0;
+      height: 82vw;
     }
   }
   &__image {
@@ -28,43 +29,58 @@
   }
   &__body {
     position: absolute;
+    padding-top: 1em;
     padding-left: 4%;
     padding-right: 2%;
     bottom: 180px;
     width: 66vw;
     background-color: var(--color-base);
+    min-height: 11em;
     @include sp() {
       bottom: calc(var(--spacing-vertical-sp) * -1);
       width: 90%;
+      padding-left: 2em;
+      min-height: 8em;
     }
     &__lead {
       margin: 0;
-      font-size: 6rem;
+      font-size: 5rem;
       // font-family: 'Secular One', sans-serif;
       font-family: 'Lora', serif;
       line-height: 1.3;
       padding-right: var(--spacing-horizontal-sp);
       color: var(--color-white);
+      letter-spacing: 0.025em;
+      text-indent: -0.8em;
       @include sp() {
         // font-size: 10vw;
         font-size: 6vw;
         text-indent: -0.8em;
-        padding-left: 1em;
+        padding-left: -0.8em;
       }
     }
     &__text {
       margin: var(--spacing) 0;
-      padding: 0 var(--spacing);
-      font-weight: bold;
+      font-family: var(--font-family-serif);
+      // padding: 0 var(--spacing);
+      // font-weight: bold;
       letter-spacing: 0.05em;
       color: var(--color-white);
       @include pc() {
         font-size: var(--font-size-h4);
       }
-      @include sp() {
-        display: none;
-      }
+      // @include sp() {
+      //   display: none;
+      // }
     }
+  }
+}
+
+.l-container--services .c-hero__body__text {
+  color: #000;
+  font-size: 3.6em;
+  @include sp() {
+    font-size: 2.4em;
   }
 }
 
