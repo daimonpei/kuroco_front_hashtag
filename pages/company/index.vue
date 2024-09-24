@@ -21,8 +21,21 @@ const { data: response } = await useFetch(
 </script>
 
 <style>
+.page-company .c-section--list {
+  margin-top: 8rem;
+}
+.page-company .c-section--list__heading {
+  min-width: 420px;
+}
 .page-company iframe {
   width: 100% !important;
   height: 320px !important;
+}
+.page-company .u-display-flex-grow-1.greeting {
+  padding-top: 6rem;
+}
+.page-company .u-display-flex-grow-1.greeting .sign {
+  font-size: 1.25em;
+  text-align: right;
 }
 </style>

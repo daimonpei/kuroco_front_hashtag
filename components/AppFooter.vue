@@ -6,9 +6,6 @@
           <li>
             <NuxtLink to="/privacy/">{{ $t('nav.policy') }}</NuxtLink>
           </li>
-          <li>
-            <a href="#">{{ $t('nav.terms') }}</a>
-          </li>
         </ul>
       </nav>
       <p class="l-footer__copyright">
