@@ -34,8 +34,7 @@ const { data: response } = await useFetch(
 .page-company .greeting {
   flex-direction: column;
   width: 1000px;
-  margin-right: auto;
-  margin-left: auto;
+  margin: 1em auto;
   border-radius: 0.25em;
   padding: 2em 3em;
   background: #31374e;
@@ -67,5 +66,22 @@ const { data: response } = await useFetch(
 }
 .page-company .greeting-message {
   font-family: var(--font-family-serif);
+}
+
+.page-company .hist {
+  display: flex;
+  flex-direction: column;
+  width: 48em;
+  margin: 2em auto;
+}
+.page-company .hist p {
+  display: flex;
+  margin: 0;
+}
+.page-company .hist p label {
+  flex-basis: 6em;
+}
+.page-company .hist p span {
+  flex-basis: 40em;
 }
 </style>
