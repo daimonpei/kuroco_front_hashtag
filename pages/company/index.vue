@@ -31,11 +31,41 @@ const { data: response } = await useFetch(
   width: 100% !important;
   height: 320px !important;
 }
-.page-company .u-display-flex-grow-1.greeting {
-  padding-top: 6rem;
+.page-company .greeting {
+  flex-direction: column;
+  width: 1000px;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 0.25em;
+  padding: 2em 3em;
+  background: #31374e;
+  color: #fff;
 }
-.page-company .u-display-flex-grow-1.greeting .sign {
+.page-company .greeting .c-section--list__heading,
+.page-company .greeting .c-section--list__heading h2 {
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+}
+.page-company .greeting .u-display-flex-grow-1 {
+  /* padding-top: 6rem; */
+  display: flex;
+  align-items: center;
+}
+.page-company .greeting .u-display-flex-grow-1 .sign {
   font-size: 1.25em;
   text-align: right;
+}
+.page-company .image-person-wrapper {
+  /* width: 25vw; */
+  padding: 2em;
+}
+.page-company .image-person {
+  width: 320px;
+  height: auto;
+  max-width: none;
+}
+.page-company .greeting-message {
+  font-family: var(--font-family-serif);
 }
 </style>
