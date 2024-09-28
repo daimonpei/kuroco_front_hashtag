@@ -80,17 +80,28 @@
   @include sp() {
     padding: 0;
   }
-}
-
-.page-company .hist p {
-  display: flex;
-  margin: 0;
-}
-.page-company .hist p label {
-  flex-basis: 6em;
-}
-.page-company .hist p span {
-  flex-basis: 40em;
+  p {
+    display: flex;
+    margin: 0;
+    label {
+      flex-basis: 6em;
+    }
+    span {
+      flex-basis: 40em;
+    }
+    @include sp() {
+      flex-direction: column;
+      padding-bottom: 0.6em;
+      label {
+        flex-basis: 100%;
+        border-bottom: 1px dotted #fff;
+      }
+      span {
+        flex-basis: 100%;
+        line-height: 1.6em;
+      }
+    }
+  }
 }
 
 ul.access {
