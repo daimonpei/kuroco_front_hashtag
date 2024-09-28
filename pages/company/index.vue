@@ -33,7 +33,7 @@ const { data: response } = await useFetch(
 }
 .page-company .greeting {
   flex-direction: column;
-  width: 1000px;
+  /* width: 1000px; */
   margin: 1em auto;
   border-radius: 0.25em;
   padding: 2em 3em;
@@ -71,8 +71,9 @@ const { data: response } = await useFetch(
 .page-company .hist {
   display: flex;
   flex-direction: column;
-  width: 48em;
+  /* width: 48em; */
   margin: 2em auto;
+  padding: 0 7.5em;
 }
 .page-company .hist p {
   display: flex;
@@ -83,5 +84,25 @@ const { data: response } = await useFetch(
 }
 .page-company .hist p span {
   flex-basis: 40em;
+}
+
+ul.access {
+  position: relative;
+}
+ul.access li.link-to-googlemap {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+ul.access li.link-to-googlemap a {
+  color: #fff;
+  background: var(--color-primary);
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  padding: 0.5em 1em;
 }
 </style>
