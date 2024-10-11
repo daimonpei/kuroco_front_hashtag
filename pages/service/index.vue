@@ -15,8 +15,29 @@ const config = useRuntimeConfig();
 const { data: response } = await useFetch(
   `${config.public.kurocoApiDomain}/rcms-api/1/content/details/service`,
   {
-    credentials: "include",
-    server: false,
+    credentials: 'include',
+    server: false
   }
 );
 </script>
+
+<style lang="scss">
+.image-service {
+  padding: 2em;
+  text-align: center;
+  background-color: #dfddea;
+  img {
+    display: block;
+    margin: 0 auto;
+    width: 75%;
+  }
+}
+h3 {
+  clear: both;
+}
+h3 + .image {
+  float: left;
+}
+h3 + .image + p {
+}
+</style>
