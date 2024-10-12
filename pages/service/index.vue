@@ -25,7 +25,7 @@ const { data: response } = await useFetch(
 .image-service {
   padding: 2em;
   text-align: center;
-  background-color: #dfddea;
+  background-color: #ddeae4;
   img {
     display: block;
     margin: 0 auto;
