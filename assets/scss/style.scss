@@ -123,3 +123,20 @@ ul.access li.link-to-googlemap a {
   display: block;
   padding: 0.5em 1em;
 }
+
+.image-service {
+  padding: 2em;
+  text-align: center;
+  background-color: #ddeae4;
+  @include sp() {
+    padding: 1em;
+  }
+  img {
+    display: block;
+    margin: 0 auto;
+    width: 75%;
+    @include sp() {
+      width: 100%;
+    }
+  }
+}

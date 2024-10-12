@@ -22,16 +22,6 @@ const { data: response } = await useFetch(
 </script>
 
 <style lang="scss">
-.image-service {
-  padding: 2em;
-  text-align: center;
-  background-color: #ddeae4;
-  img {
-    display: block;
-    margin: 0 auto;
-    width: 75%;
-  }
-}
 h3 {
   clear: both;
 }
