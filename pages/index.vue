@@ -292,7 +292,7 @@ const heroText = ref(null);
 const handleScrollScrollNav = (el, status) => {
   const iconUp = document.querySelector('.icon-up');
   const iconDown = document.querySelector('.icon-down');
-  console.log(status.scrollPercentage);
+  // console.log(status.scrollPercentage);
   if (status.scrollPercentage < 15) {
     iconUp.classList.add('onTop');
     iconDown.classList.add('onTop');

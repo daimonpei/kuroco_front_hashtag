@@ -183,7 +183,7 @@
   position: absolute;
   bottom: 100px;
   left: -30px;
-  background-color: var(--color-light-gray);
+  background-color: var(--color-light-green);
   z-index: -1;
   @include sp() {
     height: 1480px;
@@ -196,6 +196,6 @@
   position: absolute;
   bottom: 20px;
   right: -30px;
-  background-color: var(--color-light-gray);
+  background-color: var(--color-light-green);
   z-index: -1;
 }

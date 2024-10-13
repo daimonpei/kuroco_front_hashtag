@@ -38,7 +38,7 @@ const vScroll = {
       if (doc) {
         const documentHeight = doc.clientHeight;
         const windowHeight = window.innerHeight;
-        console.log(documentHeight, '>', windowHeight);
+        // console.log(documentHeight, '>', windowHeight);
         scrollPercentage =
           (window.scrollY / (documentHeight - windowHeight)) * 100;
       }

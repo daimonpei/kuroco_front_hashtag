@@ -24,12 +24,18 @@
         </button>
         <div class="l-header__nav__inner">
           <ul class="l-header__nav__list">
-            <li class="l-header__nav__list__item">
+            <li
+              class="l-header__nav__list__item"
+              v-if="activePages.includes('company')"
+            >
               <NuxtLink to="/company/" @click.native="Drawer = false">{{
                 $t('nav.company')
               }}</NuxtLink>
             </li>
-            <li class="l-header__nav__list__item">
+            <li
+              class="l-header__nav__list__item"
+              v-if="activePages.includes('service')"
+            >
               <NuxtLink to="/service/" @click.native="Drawer = false">{{
                 $t('nav.service')
               }}</NuxtLink>
@@ -39,7 +45,10 @@
                 $t('nav.news')
               }}</NuxtLink>
             </li>
-            <li class="l-header__nav__list__item">
+            <li
+              class="l-header__nav__list__item"
+              v-if="activePages.includes('recruit')"
+            >
               <NuxtLink to="/recruit/" @click.native="Drawer = false">{{
                 $t('nav.recruit')
               }}</NuxtLink>
@@ -66,4 +75,24 @@ const Drawer = ref(false);
 const route = useRoute();
 const currentPage = computed(() => route.path.split('/')[1] || 'home');
 // const { authUser, isLoggedIn, logout } = useAuth();
+
+const config = useRuntimeConfig();
+const { data: contents } = await useFetch(
+  `${config.public.kurocoApiDomain}/rcms-api/1/content/list`,
+  {
+    credentials: 'include',
+    //     query: {
+    //       filter,
+    //     },
+    //     watch: [filter],
+    server: false // in order to get query parameter, runs only client side
+  }
+);
+
+let activePages = [];
+if (contents) {
+  activePages = contents.value.list.map((element) => {
+    return element.slug;
+  });
+}
 </script>
