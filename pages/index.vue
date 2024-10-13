@@ -48,12 +48,10 @@
                 src="~/assets/image/service_1.png"
               />
               <h2 class="c-heading--lv2 service-lead">
-                {{ $t('services.title1') }}{{ $t('services.title1-1') }}<br />{{
-                  $t('services.title1-2')
-                }}
+                {{ i18n.services.title1 }}
               </h2>
               <p class="c-text">
-                {{ $t('services.text1') }}
+                {{ i18n.services.text1 }}
               </p>
             </div>
             <div
@@ -66,12 +64,10 @@
                 src="~/assets/image/service_3.png"
               />
               <h2 class="c-heading--lv2 service-lead">
-                {{ $t('services.title2') }}{{ $t('services.title2-1') }}<br />{{
-                  $t('services.title2-2')
-                }}
+                {{ i18n.services.title2 }}
               </h2>
               <p class="c-text">
-                {{ $t('services.text2') }}
+                {{ i18n.services.text2 }}
               </p>
             </div>
             <div
@@ -84,12 +80,10 @@
                 src="~/assets/image/service_2.png"
               />
               <h2 class="c-heading--lv2 service-lead">
-                {{ $t('services.title3') }}{{ $t('services.title3-1') }}<br />{{
-                  $t('services.title3-2')
-                }}
+                {{ i18n.services.title3 }}
               </h2>
               <p class="c-text">
-                {{ $t('services.text3') }}
+                {{ i18n.services.text3 }}
               </p>
             </div>
           </div>
@@ -122,10 +116,10 @@
             </div>
 
             <h2 class="c-heading--lv1 greet-title">
-              {{ $t('aboutus.title') }}
+              {{ i18n.aboutus.title }}
             </h2>
             <p class="greet">
-              {{ $t('aboutus.text') }}
+              {{ i18n.aboutus.text }}
             </p>
           </div>
           <div class="u-display-flex-shrink-0 detail-to-aboutus">
@@ -143,7 +137,7 @@
       </div>
     </section>
 
-    <section class="l-container--contents l-container--achivement">
+    <!--section class="l-container--contents l-container--achivement">
       <div class="l-container--large">
         <div class="u-display-flex u-display-flex-align-items-center u-mb-20">
           <div class="u-display-flex-grow-1">
@@ -178,7 +172,7 @@
           id="top-achivement-after"
         ></div>
       </div>
-    </section>
+    </section-->
 
     <section class="l-container--large l-container--contents">
       <div class="c-section--list">
@@ -226,6 +220,22 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 const config = useRuntimeConfig();
+const lang = ref(useI18n().locale.value);
+
+const { data: i18nData } = await useFetch(
+  `${config.public.kurocoApiDomain}/rcms-api/1/i18n`,
+  {
+    credentials: 'include',
+    server: false
+  }
+);
+const i18n = {};
+i18nData.value.list.forEach((d) => {
+  const k = d.key.split('.');
+  if (!i18n[k[0]]) i18n[k[0]] = {};
+  i18n[k[0]][k[1]] = d[lang.value];
+});
+console.log({ i18n });
 
 const { data: news } = await useFetch(
   `${config.public.kurocoApiDomain}/rcms-api/1/news/list`,
