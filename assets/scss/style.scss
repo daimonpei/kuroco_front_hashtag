@@ -74,12 +74,13 @@
 .page-company .hist {
   display: flex;
   flex-direction: column;
-  /* width: 48em; */
+  width: 48em;
+  max-width: 100%;
   margin: 2em auto;
-  padding: 0 7.5em;
-  @include sp() {
-    padding: 0;
-  }
+  // padding: 0 7.5em;
+  // @include sp() {
+  //   padding: 0;
+  // }
   p {
     display: flex;
     margin: 0;
