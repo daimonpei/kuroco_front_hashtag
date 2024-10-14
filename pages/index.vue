@@ -112,7 +112,7 @@
               About Us
             </p>
             <div class="rect">
-              <img src="~/assets/image/person_1.png" />
+              <img src="~/assets/image/shake.png" />
             </div>
 
             <h2 class="c-heading--lv1 greet-title">
