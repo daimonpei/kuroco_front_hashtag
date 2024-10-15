@@ -11,7 +11,7 @@ export default defineNuxtConfig({
     head: {
       title: 'front_nuxt_corporate',
       htmlAttrs: {
-        lang: 'en'
+        lang: 'ja'
       },
       meta: [
         { charset: 'utf-8' },
