@@ -26,6 +26,154 @@
       </div>
     </section>
 
+    <section
+      class="l-container--large l-container--contents l-container--services"
+    >
+      <div class="c-section--image-text">
+        <div class="u-display-flex-grow-2">
+          <p
+            v-scroll="delay"
+            class="c-heading--sub transition transition_fadeInLeft"
+          >
+            Our Service
+          </p>
+          <div class="flex-items">
+            <div
+              v-scroll="delay"
+              class="flex-item transition transition_fadeInUp delay_500"
+              id="top-service1"
+            >
+              <img
+                class="top-service-icon"
+                src="~/assets/image/service_1.png"
+              />
+              <h2 class="c-heading--lv2 service-lead">
+                {{ i18n.services.title1 }}
+              </h2>
+              <p class="c-text">
+                {{ i18n.services.text1 }}
+              </p>
+            </div>
+            <div
+              v-scroll="delay"
+              class="flex-item transition transition_fadeInUp delay_750"
+              id="top-service2"
+            >
+              <img
+                class="top-service-icon"
+                src="~/assets/image/service_3.png"
+              />
+              <h2 class="c-heading--lv2 service-lead">
+                {{ i18n.services.title2 }}
+              </h2>
+              <p class="c-text">
+                {{ i18n.services.text2 }}
+              </p>
+            </div>
+            <div
+              v-scroll="delay"
+              class="flex-item transition transition_fadeInUp delay_1000"
+              id="top-service3"
+            >
+              <img
+                class="top-service-icon"
+                src="~/assets/image/service_2.png"
+              />
+              <h2 class="c-heading--lv2 service-lead">
+                {{ i18n.services.title3 }}
+              </h2>
+              <p class="c-text">
+                {{ i18n.services.text3 }}
+              </p>
+            </div>
+          </div>
+          <NuxtLink to="/service/" class="c-button c-button__full">{{
+            $t('readmore')
+          }}</NuxtLink>
+        </div>
+      </div>
+      <div
+        v-scroll="delay"
+        class="after transition transition_fadeInRight stripe"
+        id="top-service-after"
+      ></div>
+    </section>
+
+    <section class="l-container--contents l-container--aboutus">
+      <div class="l-container--large">
+        <div
+          class="u-display-flex u-display-flex-align-items-center u-mb-20 l-container--aboutus-inner"
+        >
+          <div class="u-display-flex-grow-1">
+            <p
+              v-scroll="delay"
+              class="c-heading--sub transition transition_fadeInLeft"
+            >
+              About Us
+            </p>
+            <div class="rect">
+              <img src="~/assets/image/shake.png" />
+            </div>
+
+            <h2 class="c-heading--lv1 greet-title">
+              {{ i18n.aboutus.title }}
+            </h2>
+            <p class="greet">
+              {{ i18n.aboutus.text }}
+            </p>
+          </div>
+          <div class="u-display-flex-shrink-0 detail-to-aboutus">
+            <NuxtLink to="/company/" class="c-button u-mb-20">{{
+              $t('readmore')
+            }}</NuxtLink>
+          </div>
+        </div>
+
+        <div
+          v-scroll="delay"
+          class="after transition transition_fadeInLeft stripe"
+          id="top-aboutus-after"
+        ></div>
+      </div>
+    </section>
+
+    <!--section class="l-container--contents l-container--achivement">
+      <div class="l-container--large">
+        <div class="u-display-flex u-display-flex-align-items-center u-mb-20">
+          <div class="u-display-flex-grow-1">
+            <p
+              v-scroll="delay"
+              class="c-heading--sub transition transition_fadeInLeft"
+            >
+              Achievements
+            </p>
+            <h2 class="c-heading--lv1"></h2>
+          </div>
+        </div>
+
+        <div
+          v-scroll="delay"
+          id="menber-cards"
+          class="transition transition_fadeInUp"
+        >
+          <UiCardList
+            v-if="ltdNews?.data?.list?.length > 0"
+            :list="ltdNews.data.list"
+          ></UiCardList>
+        </div>
+        <div class="u-display-flex-shrink-0">
+          <NuxtLink to="/ltd-news/" class="c-button c-button__full">{{
+            $t('readmore')
+          }}</NuxtLink>
+        </div>
+        <div
+          v-scroll="delay"
+          class="after transition transition_fadeInLeft stripe"
+          id="top-achivement-after"
+        ></div>
+      </div>
+    </section-->
+
     <section class="l-container--large l-container--contents">
       <div class="c-section--list">
         <div class="c-section--list__heading">
