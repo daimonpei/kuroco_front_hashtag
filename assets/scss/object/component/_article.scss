@@ -1,4 +1,5 @@
 .c-article {
+  position: relative;
   h1:not([class]) {
     @extend .c-heading--lv1;
   }
