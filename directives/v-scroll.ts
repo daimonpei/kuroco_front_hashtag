@@ -35,13 +35,17 @@ const vScroll = {
       // window.scrollYが、document高の何%に位置しているか
       const doc = document.getElementById('__nuxt');
       let scrollPercentage = null;
+      let distanceToBottom = null;
       if (doc) {
         const documentHeight = doc.clientHeight;
         const windowHeight = window.innerHeight;
         // console.log(documentHeight, '>', windowHeight);
         scrollPercentage =
           (window.scrollY / (documentHeight - windowHeight)) * 100;
+        // あと何pxで画面下端に到達するか
+        distanceToBottom = documentHeight - window.scrollY - windowHeight;
       }
+
       if (
         binding.value(el, {
           scrollTop: window.scrollY, //スクロール位置
@@ -54,7 +58,8 @@ const vScroll = {
           isTopVisible, //アイテムの上半分が画面に表示されている
           isBottomVisible, //アイテムの下半分が画面に表示されている
           isFullVisible, //アイテムの全体が画面に表示されている
-          visibility // アイテムの表示状態
+          visibility, // アイテムの表示状態
+          distanceToBottom // あと何pxで画面下端に到達するか
         })
       ) {
         window.removeEventListener('scroll', f);

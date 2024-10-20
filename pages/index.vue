@@ -154,7 +154,7 @@ const heroText = ref(null);
 const handleScrollScrollNav = (el, status) => {
   const iconUp = document.querySelector('.icon-up');
   const iconDown = document.querySelector('.icon-down');
-  // console.log(status.scrollPercentage);
+  console.log(status.scrollPercentage, status.distanceToBottom);
   if (status.scrollPercentage < 15) {
     if (iconUp) iconUp.classList.add('onTop');
     if (iconDown) iconDown.classList.add('onTop');
@@ -169,7 +169,8 @@ const handleScrollScrollNav = (el, status) => {
   } else {
     if (iconUp) iconUp.classList.remove('onBody');
   }
-  if (status.scrollPercentage >= 99) {
+
+  if (status.distanceToBottom <= 250) {
     if (iconUp) iconUp.classList.add('onBottom');
     if (iconDown) iconDown.classList.add('onBottom');
   } else {
