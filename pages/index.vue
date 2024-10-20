@@ -156,25 +156,25 @@ const handleScrollScrollNav = (el, status) => {
   const iconDown = document.querySelector('.icon-down');
   // console.log(status.scrollPercentage);
   if (status.scrollPercentage < 15) {
-    iconUp.classList.add('onTop');
-    iconDown.classList.add('onTop');
-    iconDown.classList.remove('onBody');
+    if (iconUp) iconUp.classList.add('onTop');
+    if (iconDown) iconDown.classList.add('onTop');
+    if (iconDown) iconDown.classList.remove('onBody');
   } else {
-    iconUp.classList.remove('onTop');
-    iconDown.classList.remove('onTop');
-    iconDown.classList.add('onBody');
+    if (iconUp) iconUp.classList.remove('onTop');
+    if (iconDown) iconDown.classList.remove('onTop');
+    if (iconDown) iconDown.classList.add('onBody');
   }
   if (status.scrollPercentage >= 50) {
-    iconUp.classList.add('onBody');
+    if (iconUp) iconUp.classList.add('onBody');
   } else {
-    iconUp.classList.remove('onBody');
+    if (iconUp) iconUp.classList.remove('onBody');
   }
   if (status.scrollPercentage >= 99) {
-    iconUp.classList.add('onBottom');
-    iconDown.classList.add('onBottom');
+    if (iconUp) iconUp.classList.add('onBottom');
+    if (iconDown) iconDown.classList.add('onBottom');
   } else {
-    iconUp.classList.remove('onBottom');
-    iconDown.classList.remove('onBottom');
+    if (iconUp) iconUp.classList.remove('onBottom');
+    if (iconDown) iconDown.classList.remove('onBottom');
   }
 };
 

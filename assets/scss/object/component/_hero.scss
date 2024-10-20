@@ -1,5 +1,6 @@
 .c-hero {
   position: relative;
+  overflow: hidden;
   // margin-bottom: var(--spacing-vertical-pc);
   // padding: var(--spacing-horizontal-pc) 0 var(--spacing-vertical-pc);
   @include sp() {
